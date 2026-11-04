@@ -1,3 +1,16 @@
+![Hunter.io — DEATHCODE0x](assets/banner.svg)
+
+<p align="center">
+  <a href="https://github.com/ArturDeathCode0x/Hunter-IO"><img src="https://img.shields.io/badge/GitHub-Repositório-0B1F35?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://hunter.io/"><img src="https://img.shields.io/badge/Ferramenta-Acessar-0878C9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ferramenta"></a>
+  <img src="https://img.shields.io/badge/Área-OSINT-123B5D?style=for-the-badge" alt="OSINT">
+  <img src="https://img.shields.io/badge/Uso-Ético-087E8B?style=for-the-badge" alt="Uso ético">
+</p>
+
+> Pesquisa responsável de informações profissionais e domínios corporativos.
+
+---
+
 # Hunter.io
 
 Notas de uso do Hunter para pesquisa de informações profissionais publicamente disponibilizadas e validação responsável de contatos em atividades autorizadas.

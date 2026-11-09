@@ -1,55 +1,87 @@
-![Hunter.io — DEATHCODE0x](assets/banner.svg)
+<div align="center">
+  <img src="https://shields.io" alt="OSINT Badge">
+  <img src="https://shields.io" alt="Python Badge">
 
-<p align="center">
-  <a href="https://github.com/ArturDeathCode0x/Hunter-IO"><img src="https://img.shields.io/badge/GitHub-Repositório-0B1F35?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="https://hunter.io/"><img src="https://img.shields.io/badge/Ferramenta-Acessar-0878C9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ferramenta"></a>
-  <img src="https://img.shields.io/badge/Área-OSINT-123B5D?style=for-the-badge" alt="OSINT">
-  <img src="https://img.shields.io/badge/Uso-Ético-087E8B?style=for-the-badge" alt="Uso ético">
-</p>
+  <h1>🕵️‍♂️ Relatório OSINT & Automação Hunter.io</h1>
 
-> Pesquisa responsável de informações profissionais e domínios corporativos.
+  <p>
+    <b>Laboratório prático de footprinting passivo, mapeamento de superfície de ataque e análise de vazamento de credenciais.</b>
+  </p>
+
+  <p><i>Este repositório documenta técnicas de inteligência de fontes abertas e inclui um script automatizado de terminal para auditoria de domínios corporativos.</i></p>
+</div>
+
+<hr>
+
+## 📊 Relatório Técnico de Reconhecimento
+
+Este relatório consolida as descobertas obtidas durante a fase de inteligência de fontes abertas (OSINT) aplicada ao ambiente alvo para analisar a exposição de identidades corporativas na internet.
+
+### 1. Resumo Executivo
+*   **Organização Alvo:** Banco do Nordeste do Brasil (BNB)
+*   **Domínio Investigado:** `bnb.gov.br`
+*   **Técnica Aplicada:** Reconhecimento Passivo (Mapeamento de e-mails corporativos e análise de exposição externa).
+*   **Total de E-mails Mapeados:** 5 endereços institucionais identificados.
+*   **Contas com Alerta de Exposição:** 1 e-mail associado a supostos vazamentos históricos no ecossistema da Dark Web.
+*   **Nível de Severidade Inicial:** <span style="color:orange">**MÉDIO**</span> (Alvo em potencial para engenharia social direcionada).
+
+### 2. Metodologia de Coleta
+O processo de reconhecimento foi executado através de auditoria assistida por ferramentas, cruzando duas etapas críticas:
+1.  **Mapeamento de Estrutura:** Utilização da inteligência de dados da plataforma *Hunter.io* para isolar o padrão de e-mails legítimos do domínio alvo.
+2.  **Validação de Incidentes:** Cruzamento manual de assinaturas digitais na base de dados global do *Have I Been Pwned* para identificar registros públicos expostos.
+
+### 3. Cenários Globais de Ameaça Observados
+A exposição de contas institucionais está diretamente atrelada a ameaças comuns que afetam organizações modernas:
+*   **InfoStealers (Malwares de Roubo):** Coleta de credenciais salvas em navegadores de máquinas infectadas por vírus.
+*   **Vazamentos de Plataformas Terceiras:** Quebras de segurança em ambientes de ensino (e-learning), eventos ou serviços externos onde o funcionário utilizou o e-mail corporativo para cadastro.
+*   **Compilações de Fóruns (Combo Lists):** Agrupamento de bancos de dados antigos disponibilizados em canais maliciosos e fóruns cibernéticos.
 
 ---
 
-# Hunter.io
+## 🛠️ Automação: Ferramenta Hunter-Terminal (CLI)
 
-Repositório de estudos sobre o uso do Hunter.io em atividades de OSINT, reconhecimento passivo e validação responsável de informações profissionais publicamente disponibilizadas.
+Para otimizar o processo de footprinting e viabilizar auditorias rápidas diretamente pela linha de comando, foi desenvolvido um script robusto em **Python 3** sem dependências externas (utilizando apenas módulos nativos).
 
-## Conteúdo
+### ⚙️ Funcionalidades do Script
+*   `setup`: Salva de forma segura sua chave de API ocultando a digitação (`getpass`) e restringindo permissões de leitura no arquivo local (`chmod 600`).
+*   `domain`: Realiza a busca detalhada de e-mails válidos indexados para qualquer domínio informado.
+*   `find`: Tenta deduzir o e-mail exato de um funcionário com base no Primeiro Nome, Sobrenome e Domínio.
+*   `verify`: Executa uma checagem de entregabilidade e status de um e-mail específico.
+*   `account`: Exibe os dados da sua conta e o consumo atual de créditos da API.
 
-- **[Relatório técnico de OSINT](docs/relatorio-osint-hunter.md):** metodologia, resultados agregados observados, limitações e boas práticas.
-- **[Captura anonimizada](assets/hunter-domain-search-redacted.jpg):** registro visual da consulta ao Domain Search, com nomes e endereços individuais ocultados.
+### 🚀 Como Configurar e Utilizar
 
-## Para que serve
-
-- Entender a presença pública de domínios corporativos.
-- Consultar informações profissionais disponibilizadas pela ferramenta.
-- Apoiar inventários de exposição e processos legítimos de contato.
-- Documentar resultados sem divulgar dados pessoais desnecessários.
-
-## Uso responsável
-
-1. Trabalhe somente com organizações e finalidades legítimas.
-2. Consulte a documentação oficial e respeite limites do plano e da API.
-3. Não faça coleta em massa nem use os dados para spam, phishing ou assédio.
-4. Minimize a retenção de dados pessoais e documente a finalidade.
-5. Se encontrar exposição indevida, reporte ao responsável.
-
-## API
-
-Guarde chaves em variáveis de ambiente ou em um gerenciador de segredos. **Nunca** publique tokens, chaves ou arquivos .env no GitHub.
-
-Exemplo de variável local:
-
+**1. Instalação:**
+Salve o arquivo do script no seu ambiente com o nome `hunter_cli.py` e conceda permissão de execução:
 ```bash
-export HUNTER_API_KEY="SUA_CHAVE_LOCAL"
+chmod +x hunter_cli.py
 ```
 
-## Referências
+**2. Configuração Inicial:**
+Execute o comando de setup para salvar sua credencial do Hunter.io com segurança:
+```bash
+./hunter_cli.py setup
+```
 
-- Site: https://hunter.io/
-- Documentação: https://hunter.io/api-documentation
+**3. Exemplos de Uso Prático:**
 
-## Aviso legal
+*   **Mapear e-mails de um domínio corporativo:**
+    ```bash
+    ./hunter_cli.py domain bnb.gov.br --limit 5
+    ```
 
-Uso educacional e profissional legítimo. Cumpra a legislação de proteção de dados, os termos da plataforma e as políticas da organização.
+*   **Verificar a validade de uma conta específica:**
+    ```bash
+    ./hunter_cli.py verify teste@dominio.com
+    ```
+
+*   **Consultar saldo de créditos restantes:**
+    ```bash
+    ./hunter_cli.py account
+    ```
+
+---
+
+## ⚖️ Aviso Legal (Disclaimer)
+
+Este projeto foi desenvolvido estritamente para **fins educacionais e de estudo acadêmico de segurança cibernética**. Toda a coleta de informações foi realizada em fontes públicas de dados abertos (OSINT) e de forma puramente passiva. Nenhuma tentativa de intrusão, quebra de criptografia, engenharia reversa de senhas ou acesso não autorizado a sistemas foi realizada. O autor não se responsabiliza pelo uso indevido das técnicas e ferramentas descritas neste repositório.

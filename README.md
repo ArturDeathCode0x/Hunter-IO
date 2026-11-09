@@ -6,10 +6,10 @@
 
    <div align="center">
   <img 
-    src="assets/Have I Been Pwned.png"
-    alt="Preview do projeto"
+    src="assets/hunter.jpeg"
+    alt=""
     width="800"
-    height="400"
+    height="800"
     style="object-fit: cover;"
   />
 </div>

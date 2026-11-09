@@ -18,7 +18,7 @@ Esse número representa resultados apresentados pela plataforma no momento da ca
 
 A imagem publicada neste repositório foi reduzida e teve a área de nomes e endereços individuais ocultada para evitar a exposição desnecessária de dados pessoais.
 
-![Captura anonimizada do Hunter.io](../assets/hunter-domain-search-redacted.jpg)
+![Captura anonimizada do Hunter.io](../assets/hunter.png)
 
 ## 3. Metodologia
 

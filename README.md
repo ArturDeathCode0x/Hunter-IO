@@ -2,6 +2,19 @@
   <img src="https://shields.io" alt="OSINT Badge">
   <img src="https://shields.io" alt="Python Badge">
 
+
+
+   <div align="center">
+  <img 
+    src="assets/Have I Been Pwned.png"
+    alt="Preview do projeto"
+    width="800"
+    height="400"
+    style="object-fit: cover;"
+  />
+</div>
+
+
   <h1>🕵️‍♂️ Relatório OSINT & Automação Hunter.io</h1>
 
   <p>
